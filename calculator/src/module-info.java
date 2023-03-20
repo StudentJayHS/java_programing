@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author hugev
+ *
+ */
+module calculator {
+}
