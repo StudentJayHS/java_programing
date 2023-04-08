@@ -15,16 +15,13 @@ public class phone {
 	
 	static class PhoneBook {
 		Scanner scanner = new Scanner(System.in);
-		Phone[] p;
+		Phone[] p = new Phone[100];
 		// 저장할 인원 전역변수
 		int people;
 		
 		void save() {
 			System.out.print("인원수>>");
 			people = scanner.nextInt();
-			
-			// 무한 배열 생성
-			p = new Phone[people];
 			
 			for(int i = 0; i < people; i++) {
 				System.out.print("이름과 전화번호(이름과 번호는 빈 칸 없이 입력)>>");
@@ -40,25 +37,15 @@ public class phone {
 				
 				if(name.equals("그만")) break;
 				
-				String tel = find(name);
-				if(tel == null) {
-					System.out.println(name + "이 없습니다.");
-				} else {
-					System.out.println(name + "의 번호는 " + tel + "입니다.");
+				for(int i = 0; i < people; i++) {
+					if(p[i].getName().equals(name)) {
+						String telNumber = p[i].getTel();
+						System.out.println(name + "의 번호는 " + telNumber + "입니다.");
+					} else if(i == people-1) {
+						System.out.println(name + "이 없습니다.");
+					}
 				}
 			}
-		}
-		
-		String find(String name) {
-			for(int i = 0; i < people; i++) {
-				if(p[i].getName().equals(name)) {
-					String telNumber = p[i].getTel();
-					return telNumber;
-				} else {
-					return null;
-				}
-			}
-			return name;
 		}
 	}
 
