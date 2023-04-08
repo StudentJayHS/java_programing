@@ -32,7 +32,7 @@ public class simpleGame {
 				System.out.print("게임을 종료합니다...");
 				break;
 			}
-			else System.out.print("다시 입력하세요.");
+			else System.out.print("다시 입력하세요. \n");
 			
 		}
 	}
