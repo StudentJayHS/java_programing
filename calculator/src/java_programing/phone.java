@@ -16,7 +16,6 @@ public class phone {
 	static class PhoneBook {
 		Scanner scanner = new Scanner(System.in);
 		Phone[] p = new Phone[100];
-		// 저장할 인원 전역변수
 		int people;
 		
 		void save() {
